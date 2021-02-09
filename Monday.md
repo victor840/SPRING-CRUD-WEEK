@@ -1,4 +1,4 @@
-# Spring Boot CRUD Operations 
+## Spring Boot CRUD Operations
 
 In this tutorial, you will learn how to create APIs/methods for crud operations in spring boot application which modify the data in the database using hibernate/JPA persistence APIs.
 
