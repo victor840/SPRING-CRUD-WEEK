@@ -1,14 +1,20 @@
 package Weather.API.Victor.API.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+
     @Entity
-    @Table(name = "products")
-    public class Product {
+    @Table(name = "address")
+    public class Address {
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
@@ -67,4 +73,5 @@ import java.util.Date;
             this.updatedAt = updatedAt;
         }
     }
+
 
