@@ -45,11 +45,24 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public Person getPersonById(long personId) {
-        return null;
+        Optional < Person > personDb = this.personRepository.findById(personId);
+
+        if(personDb.isPresent()){
+            return personDb.get();
+        } else{
+            throw new ResourceNotFoundException("Record not found with id : " +personId);
+        }
     }
 
     @Override
-    public void deletePerson(long id) {
+    public void deletePerson(long personId) {
 
+        Optional < Person > personDb = this.personRepository.findById(personId);
+
+        if(personDb.isPresent()){
+            this.personRepository.delete(personDb.get());
+        } else {
+            throw new ResourceNotFoundException("Record not found with id : " +personId);
+        }
     }
 }
